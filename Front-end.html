@@ -1,0 +1,130 @@
+<DOCTYPE html>
+<html>
+<head>
+<style>
+body     {background-color: rgb(20,250,100);
+          font-family: sans-serif;}
+h1       {font-size: 100px;
+          margin-top: 30;
+          display: flex;
+          justify-content: center;
+         }
+
+p1       {background-color: black;
+          color: white;
+          font-size: 30px;
+          font-weight: 700;
+          margin: 50;
+          padding: 10;
+          text-transform: uppercase;
+          display: flex;
+          justify-content: center;
+          }
+
+p2       {font-size: 30px;
+          margin: 30;
+          display: flex;
+          justify-content: center;
+          margin-top: 10;
+          font-weight: 700;
+         }
+
+.div     {background-color: orange;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+         }
+
+.div2    {background-color: white;
+          border-color: green;
+          border-style: solid;
+          margin: 10;
+          width: 450px;
+         }
+
+.section {background-color: rgb(20,250,100);
+          display: flex;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 30px;
+          margin-top: 0;
+          }
+
+ol       {font-size: 20px;
+          margin: 30;
+         }
+
+form     {display: flex;
+          justify-content: center;
+          margin-top: 30;
+          }
+
+button   {background-color: white;
+          color: blue;
+          padding: 10;
+          padding-left: 20;
+          padding-right: 20;
+          font-weight: 800;
+          margin-left: 5;
+          }
+
+button:hover {cursor: pointer;
+              color: red;
+              padding-right: 30;
+              padding-left: 30;
+             }
+
+li:hover {color: red;
+          cursor: pointer;}
+
+#input  {background-color: black;
+         padding: 10;
+         color: white;
+        }
+</style>
+
+<script>
+function courses() {
+        document.write("COURSES:\nVariables.\nConditional operators.\nObjects.")
+                 }
+</script>
+
+</head>
+
+<body>
+
+<h1>Welcome Lecturer X</h1>
+
+  <p1>This is where you manage your degrees and students</p1>
+
+  <p2>Below information is linked to your account</p2>
+
+<div class="div">
+
+<div class="div2">
+  <p class="section">Students</p>
+   <ol>
+    <li>Mxolisi Mabaso</li>
+    <li>Student 2</li>
+    <li>Student 3</li>
+   </ol>
+</div>
+
+<div class="div2">
+  <p class="section">Degrees</p>
+   <ol>
+    <li onClick="courses()">Python Degree</li>
+    <li onClick="courses()">JavaScript Degree</li>
+    <li onClick="courses()">C# Degree</li>
+   </ol>
+</div>
+
+</div>
+
+<form>
+  <input id="input" type="text" placeholder="Add a new student here">
+  <button type="submit">Add</button>
+</form>
+
+</body>
+</html>
