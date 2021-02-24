@@ -1,0 +1,239 @@
+<DOCTYPE html>
+<html>
+<head>
+<style>
+body     {background-color: rgb(20,250,100);
+          font-family: sans-serif;}
+h1       {font-size: 100px;
+          margin-top: 30;
+          display: flex;
+          justify-content: center;
+         }
+
+p1       {background-color: black;
+          color: white;
+          font-size: 30px;
+          font-weight: 700;
+          margin: 50;
+          padding: 10;
+          text-transform: uppercase;
+          display: flex;
+          justify-content: center;
+          }
+
+p2       {font-size: 30px;
+          margin: 30;
+          display: flex;
+          justify-content: center;
+          margin-top: 10;
+          font-weight: 700;
+         }
+
+.div     {background-color: orange;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+         }
+
+.div2    {background-color: white;
+          border-color: green;
+          border-style: solid;
+          margin: 10;
+          width: 450px;
+         }
+
+.section {background-color: rgb(20,250,100);
+          display: flex;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 30px;
+          margin-top: 0;
+          }
+
+ol       {font-size: 20px;
+          margin: 30;
+         }
+
+form     {display: flex;
+          justify-content: center;
+          margin-top: 30;
+          }
+
+button   {background-color: white;
+          color: blue;
+          padding: 10;
+          padding-left: 20;
+          padding-right: 20;
+          font-weight: 800;
+          margin-left: 5;
+          }
+
+button:hover {cursor: pointer;
+              color: red;
+              padding-right: 30;
+              padding-left: 30;
+             }
+
+.degrees:hover {color: red;
+                cursor: pointer;}
+
+.students:hover {cursor: pointer;
+                 color: black;
+                }
+
+#input  {background-color: black;
+         padding: 10;
+         color: white;
+        }
+
+<!--JavaScript code below-->
+
+</style>
+
+<script>
+
+//Below function to validate user input on the form
+
+function validate() {
+    var sname = document.getElementBy("input");
+    if(sname.value != "") {
+     return true; }
+ alert("The value should not be blank");
+     return false;
+  }
+
+//Below fuction to display degree courses
+
+function courses() {
+        alert("DEGREE COURSES:\nVariables.\nConditional operators.\nObjects.")
+                 }
+
+//Below fuctions to manage students on a selected degree. Lecturer can add or remove a student from the selected degree.
+
+//Below function for adding student to Python degree
+
+function add() {
+  var name = prompt("Enter student name to add to the degree list");
+  
+    var li = document.createElement("section");
+    var nstudent = document.createTextNode(name);
+    li.appendChild(nstudent);
+      
+    var div = document.getElementById("std");
+    div.appendChild(li);  
+
+    alert("Student::"+name+",has been added to the Python degree student list. null does not affect the list");
+
+   }
+
+//Below function for adding student to JavaScript degree
+
+function add2() {
+  var name = prompt("Enter student name to add to the degree list");
+  
+    var li = document.createElement("section");
+    var nstudent = document.createTextNode(name);
+    li.appendChild(nstudent);
+      
+    var div = document.getElementById("std2");
+    div.appendChild(li);  
+
+    alert("Student::"+name+",has been added to the JavaScript degree student list. null does not affect the list");
+   }
+
+//Below function for adding student to C# degree
+
+function add3() {
+  var name = prompt("Enter student name to add to the degree list");
+
+    var li = document.createElement("section");
+    var nstudent = document.createTextNode(name);
+    li.appendChild(nstudent);
+      
+    var div = document.getElementById("std3");
+    div.appendChild(li);  
+
+    alert("Student::"+name+",has been added to the C# degree student list. null does not affect the list");
+   }
+
+//Below function to remove student from a selected degree list.
+
+//Below func to remove student from the Python degree list
+
+function remove() {
+   var removename = prompt("Enter student name to be removed from the Python degree list");
+
+   var parent = document.getElementById("std");
+   var child = document.getElementByTagName("section").value;
+   parent.removeChild(child);
+
+   alert("Student::"+removename+",has been removed from the degree list");
+  }
+
+//Below func to remove student from the JavaScript degree list
+
+function remove2() {
+   var removename = prompt("Enter student name to be removed from the JavaScript degree list");
+
+   var parent = document.getElementById("std2");
+   var child = document.getElementByTagName("section").value;
+   parent.removeChild(child);
+
+   alert("Student::"+removename+",has been removed from the degree list");
+  }
+
+//Below func to remove student from the C# degree list
+
+function remove3() {
+   var removename = prompt("Enter student name to be removed from the C# degree list");
+
+   var parent = document.getElementById("std3");
+   var child = document.getElementByTagName("section").value;
+   parent.removeChild(child);
+
+   alert("Student::"+removename+",has been removed from the degree list");
+  }
+
+</script>
+
+</head>
+
+<body>
+
+<!--Number of improvements from section 2 and additional functionality when clicking on a degree-->
+
+<h1>Welcome Lecturer X</h1>
+
+  <p1>This is where you manage your degrees and students</p1>
+
+  <p2>Below information is linked to your account</p2>
+
+<div class="div">
+
+<div class="div2">
+  <p class="section">Students</p>
+   <ol id="stdn">
+    <li class="students">Mxolisi Mabaso</li>
+    <li class="students">Student 2</li>
+    <li class="students">Student 3</li>
+   </ol>
+</div>
+
+<div class="div2">
+  <p class="section">Degrees</p>
+<ol>  
+<li class="degrees" id="std" onClick="courses(); add(); remove()">Python Degree</li>
+<li class="degrees" id="std2" onClick="courses(); add2(); remove2()">JavaScript Degree</li>
+<li class="degrees" id="std3" onClick="courses(); add3(); remove3()">C# Degree</li>
+</ol>
+</div>
+
+</div>
+
+<form onsubmit="return validate()" method="post">
+  <input id="input" type="text" name="sname" placeholder="Add a new student here"/>
+  <button type="submit">Add</button>
+</form>
+
+</body>
+</html>
